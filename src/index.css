@@ -1,0 +1,54 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+
+  --color-tf-bg: #0f172a;
+  --color-tf-surface: #1e293b;
+  --color-tf-elevated: #243044;
+  --color-tf-primary: #3b82f6;
+  --color-tf-secondary: #8b5cf6;
+  --color-tf-success: #22c55e;
+  --color-tf-warning: #f59e0b;
+  --color-tf-danger: #ef4444;
+  --color-tf-rollback: #f97316;
+  --color-tf-muted: #94a3b8;
+  --color-tf-line: rgb(148 163 184 / 0.14);
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #0f172a;
+  color: #e2e8f0;
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 99px;
+}
+
+.tf-grid-line {
+  background-image:
+    linear-gradient(to right, rgb(148 163 184 / 0.06) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(148 163 184 / 0.06) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
