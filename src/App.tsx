@@ -10,13 +10,10 @@ import { ServiceHealthPage } from './pages/ServiceHealthPage'
 import { WorkflowsPage } from './pages/WorkflowsPage'
 import {
   AlertsPage,
-  ArchitecturePage,
   CatalogPage,
   CommandCenterPage,
-  DemoPage,
   DigitalTwinPage,
   OrderDetailsPage,
-  ReplayPage,
   SlaPage,
   WarRoomPage,
 } from './pages/FeaturePages'
@@ -35,15 +32,12 @@ export default function App() {
             <Route path="failures" element={<FailuresPage />} />
             <Route path="analytics" element={<AnalyticsPage />} />
             <Route path="audit" element={<AuditLogsPage />} />
-            <Route path="replay" element={<ReplayPage />} />
             <Route path="sla" element={<SlaPage />} />
             <Route path="war-room" element={<WarRoomPage />} />
             <Route path="digital-twin" element={<DigitalTwinPage />} />
             <Route path="command-center" element={<CommandCenterPage />} />
             <Route path="catalog" element={<CatalogPage />} />
             <Route path="alerts" element={<AlertsPage />} />
-            <Route path="demo" element={<DemoPage />} />
-            <Route path="architecture" element={<ArchitecturePage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

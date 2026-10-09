@@ -13,8 +13,6 @@ import {
   Boxes,
   Cable,
   Command,
-  Layers3,
-  PlayCircle,
   ShieldCheck,
 } from 'lucide-react'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
@@ -29,15 +27,12 @@ const nav = [
   { to: '/failures', label: 'Failures', icon: Siren },
   { to: '/analytics', label: 'Analytics', icon: Radio },
   { to: '/audit', label: 'Audit Logs', icon: ShieldAlert },
-  { to: '/replay', label: 'Workflow Replay', icon: PlayCircle },
   { to: '/sla', label: 'SLA Center', icon: ShieldCheck },
   { to: '/war-room', label: 'Incident War Room', icon: Siren },
   { to: '/digital-twin', label: 'Digital Twin', icon: Cable },
   { to: '/command-center', label: 'Command Center', icon: Command },
   { to: '/catalog', label: 'Service Catalog', icon: Boxes },
   { to: '/alerts', label: 'Alert Center', icon: BrainCircuit },
-  { to: '/demo', label: 'Demo Mode', icon: PlayCircle },
-  { to: '/architecture', label: 'Architecture', icon: Layers3 },
 ]
 
 const titles: Record<string, { title: string; subtitle: string }> = {
@@ -48,15 +43,12 @@ const titles: Record<string, { title: string; subtitle: string }> = {
   '/failures': { title: 'Failure injection', subtitle: 'Chaos controls for operator drills — frontend simulation.' },
   '/analytics': { title: 'Activation analytics', subtitle: 'Success, failure, retry, and rollback trends.' },
   '/audit': { title: 'Audit timeline', subtitle: 'Immutable trail of orchestration events.' },
-  '/replay': { title: 'Workflow replay center', subtitle: 'Replay a saga without touching live systems.' },
   '/sla': { title: 'SLA monitoring center', subtitle: 'Activation commitments by service family.' },
   '/war-room': { title: 'Incident war room', subtitle: 'Coordinate recovery across affected telecom services.' },
   '/digital-twin': { title: 'Telecom digital twin', subtitle: 'Visual topology and predicted activation risk.' },
   '/command-center': { title: 'Executive command center', subtitle: 'Business outcomes protected by orchestration.' },
   '/catalog': { title: 'Telecom service catalog', subtitle: 'Commercial services and activation performance.' },
   '/alerts': { title: 'NOC alert center', subtitle: 'Operational signals requiring acknowledgement.' },
-  '/demo': { title: 'Hackathon demo mode', subtitle: 'Trigger observable saga journeys on demand.' },
-  '/architecture': { title: 'Architecture center', subtitle: 'Event-driven activation fabric.' },
 }
 
 export function AppShell() {

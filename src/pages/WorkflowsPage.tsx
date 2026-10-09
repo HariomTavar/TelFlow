@@ -4,6 +4,7 @@ import { Card, SectionHeader, StatusBadge, StepLamp } from '../components/ui/pri
 import { useOps } from '../context/OpsContext'
 import { serviceLabel, stepLabel } from '../lib/format'
 import type { WorkflowStep } from '../types'
+import { WorkflowPreviewPage } from './WorkflowPreviewPage'
 
 const lanes: WorkflowStep[] = ['INVENTORY', 'NETWORK', 'BILLING', 'NOTIFICATION']
 
@@ -54,6 +55,8 @@ export function WorkflowsPage() {
           ))}
         </div>
       </Card>
+
+      <WorkflowPreviewPage />
     </div>
   )
 }
