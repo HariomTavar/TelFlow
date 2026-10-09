@@ -8,6 +8,18 @@ import { FailuresPage } from './pages/FailuresPage'
 import { OrdersPage } from './pages/OrdersPage'
 import { ServiceHealthPage } from './pages/ServiceHealthPage'
 import { WorkflowsPage } from './pages/WorkflowsPage'
+import {
+  AlertsPage,
+  ArchitecturePage,
+  CatalogPage,
+  CommandCenterPage,
+  DemoPage,
+  DigitalTwinPage,
+  OrderDetailsPage,
+  ReplayPage,
+  SlaPage,
+  WarRoomPage,
+} from './pages/FeaturePages'
 
 export default function App() {
   return (
@@ -17,11 +29,21 @@ export default function App() {
           <Route element={<AppShell />}>
             <Route index element={<DashboardPage />} />
             <Route path="orders" element={<OrdersPage />} />
+            <Route path="orders/:id" element={<OrderDetailsPage />} />
             <Route path="workflows" element={<WorkflowsPage />} />
             <Route path="health" element={<ServiceHealthPage />} />
             <Route path="failures" element={<FailuresPage />} />
             <Route path="analytics" element={<AnalyticsPage />} />
             <Route path="audit" element={<AuditLogsPage />} />
+            <Route path="replay" element={<ReplayPage />} />
+            <Route path="sla" element={<SlaPage />} />
+            <Route path="war-room" element={<WarRoomPage />} />
+            <Route path="digital-twin" element={<DigitalTwinPage />} />
+            <Route path="command-center" element={<CommandCenterPage />} />
+            <Route path="catalog" element={<CatalogPage />} />
+            <Route path="alerts" element={<AlertsPage />} />
+            <Route path="demo" element={<DemoPage />} />
+            <Route path="architecture" element={<ArchitecturePage />} />
             <Route path="*" element={<Navigate to="/" replace />} />
           </Route>
         </Routes>

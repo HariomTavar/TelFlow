@@ -16,7 +16,7 @@ const items = [
   { key: 'successRate', label: 'Success Rate', icon: CheckCircle2, format: (v: number) => `${v.toFixed(1)}%`, delta: '+0.4%' },
   { key: 'retryCount', label: 'Retry Count', icon: RefreshCcw, format: (v: number) => formatNumber(v), delta: '-8%' },
   { key: 'rollbackCount', label: 'Rollback Count', icon: RotateCcw, format: (v: number) => formatNumber(v), delta: '1.0%' },
-  { key: 'avgActivationSec', label: 'Avg Activation', icon: Clock3, format: (v: number) => `${v}s`, delta: '-3s' },
+  { key: 'avgActivationSec', label: 'Average Activation Time', icon: Clock3, format: (v: number) => `${v}s`, delta: '-3s' },
 ] as const
 
 export function KpiGrid() {

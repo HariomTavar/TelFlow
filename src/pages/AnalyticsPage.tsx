@@ -19,8 +19,8 @@ import { retryBuckets, rollbackTrend, seedTrends } from '../data/mock'
 import { formatNumber } from '../lib/format'
 
 const pieData = [
-  { name: 'Success', value: 96.4, color: '#22c55e' },
-  { name: 'Failure', value: 3.6, color: '#ef4444' },
+  { name: 'Success', value: 96.4, color: '#16A765' },
+  { name: 'Failure', value: 3.6, color: '#E45454' },
 ]
 
 const failTrend = seedTrends.map((d) => ({
@@ -38,7 +38,7 @@ function ChartTip({
   suffix?: string
 }) {
   return (
-    <div className="rounded-lg border border-slate-700 bg-[#0b1220] px-3 py-2 text-xs text-white">
+    <div className="rounded-lg border border-tf-line bg-white px-3 py-2 text-xs text-slate-900 shadow-lg">
       <div className="text-tf-muted">{label}</div>
       <div className="text-sm font-semibold">
         {value}
@@ -79,16 +79,16 @@ export function AnalyticsPage() {
         <div className="h-[280px]">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart data={failTrend}>
-              <CartesianGrid stroke="rgba(148,163,184,0.12)" vertical={false} />
-              <XAxis dataKey="month" tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} unit="%" />
+              <CartesianGrid stroke="#E7EBF2" vertical={false} />
+              <XAxis dataKey="month" tick={{ fill: '#64748B', fontSize: 11 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: '#64748B', fontSize: 11 }} axisLine={false} tickLine={false} unit="%" />
               <Tooltip
                 content={({ label, payload }) => {
                   const v = payload?.[0]?.value
                   return <ChartTip label={String(label)} value={Number(v ?? 0)} suffix="%" />
                 }}
               />
-              <Area type="monotone" dataKey="rate" stroke="#ef4444" fill="#ef444433" strokeWidth={2} />
+              <Area type="monotone" dataKey="rate" stroke="#E45454" fill="#E4545433" strokeWidth={2} />
             </AreaChart>
           </ResponsiveContainer>
         </div>
@@ -99,15 +99,15 @@ export function AnalyticsPage() {
         <div className="h-[280px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={retryBuckets}>
-              <CartesianGrid stroke="rgba(148,163,184,0.12)" vertical={false} />
-              <XAxis dataKey="attempt" tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
+              <CartesianGrid stroke="#E7EBF2" vertical={false} />
+              <XAxis dataKey="attempt" tick={{ fill: '#64748B', fontSize: 11 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: '#64748B', fontSize: 11 }} axisLine={false} tickLine={false} />
               <Tooltip
                 content={({ label, payload }) => (
                   <ChartTip label={`Attempt ${label}`} value={Number(payload?.[0]?.value ?? 0)} />
                 )}
               />
-              <Bar dataKey="count" fill="#8b5cf6" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="count" fill="#3978F6" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>
@@ -118,15 +118,15 @@ export function AnalyticsPage() {
         <div className="h-[280px]">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={rollbackTrend}>
-              <CartesianGrid stroke="rgba(148,163,184,0.12)" vertical={false} />
-              <XAxis dataKey="week" tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
+              <CartesianGrid stroke="#E7EBF2" vertical={false} />
+              <XAxis dataKey="week" tick={{ fill: '#64748B', fontSize: 11 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: '#64748B', fontSize: 11 }} axisLine={false} tickLine={false} />
               <Tooltip
                 content={({ label, payload }) => (
                   <ChartTip label={String(label)} value={Number(payload?.[0]?.value ?? 0)} />
                 )}
               />
-              <Line type="monotone" dataKey="count" stroke="#f97316" strokeWidth={2} dot={{ r: 3, fill: '#f97316' }} />
+              <Line type="monotone" dataKey="count" stroke="#F28C45" strokeWidth={2} dot={{ r: 3, fill: '#F28C45' }} />
             </LineChart>
           </ResponsiveContainer>
         </div>
@@ -137,16 +137,16 @@ export function AnalyticsPage() {
         <div className="h-[260px]">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={seedTrends}>
-              <CartesianGrid stroke="rgba(148,163,184,0.12)" vertical={false} />
-              <XAxis dataKey="month" tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
+              <CartesianGrid stroke="#E7EBF2" vertical={false} />
+              <XAxis dataKey="month" tick={{ fill: '#64748B', fontSize: 11 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: '#64748B', fontSize: 11 }} axisLine={false} tickLine={false} />
               <Tooltip
                 formatter={(value) => formatNumber(Number(value))}
-                contentStyle={{ background: '#0b1220', border: '1px solid #334155', borderRadius: 12 }}
+                contentStyle={{ background: '#FFFFFF', border: '1px solid #E7EBF2', borderRadius: 12, color: '#172033' }}
               />
-              <Bar dataKey="successful" stackId="a" fill="#3b82f6" />
-              <Bar dataKey="failed" stackId="a" fill="#ef4444" />
-              <Bar dataKey="rollbacks" stackId="a" fill="#f97316" radius={[4, 4, 0, 0]} />
+              <Bar dataKey="successful" stackId="a" fill="#3978F6" />
+              <Bar dataKey="failed" stackId="a" fill="#E45454" />
+              <Bar dataKey="rollbacks" stackId="a" fill="#F28C45" radius={[4, 4, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
         </div>

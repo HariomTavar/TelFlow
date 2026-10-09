@@ -13,7 +13,7 @@ export function Card({
 }) {
   return (
     <section
-      className={`rounded-2xl border border-tf-line bg-tf-surface shadow-[0_8px_30px_rgb(0_0_0_/0.18)] ${
+      className={`rounded-2xl border border-tf-line bg-tf-surface shadow-[0_2px_10px_rgb(23_32_51_/0.04)] ${
         padded ? 'p-5' : ''
       } ${className}`}
     >
@@ -37,12 +37,12 @@ export function SectionHeader({
     <div className="mb-4 flex items-center justify-between gap-3">
       <div className="flex items-center gap-2.5 min-w-0">
         {icon ? (
-          <span className="grid h-8 w-8 place-items-center rounded-lg bg-white/5 text-slate-300">
+          <span className="grid h-8 w-8 place-items-center rounded-lg bg-[#F0F3F8] text-tf-primary">
             {icon}
           </span>
         ) : null}
         <div className="min-w-0">
-          <h2 className="text-[15px] font-semibold tracking-tight text-white">{title}</h2>
+          <h2 className="text-[15px] font-semibold tracking-tight text-slate-900">{title}</h2>
           {meta ? <div className="text-xs text-tf-muted mt-0.5">{meta}</div> : null}
         </div>
       </div>

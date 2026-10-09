@@ -1,5 +1,6 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { useMemo } from 'react'
+import { Link } from 'react-router-dom'
 import { useOps } from '../../context/OpsContext'
 import { formatDuration, serviceLabel, statusTone, stepLabel } from '../../lib/format'
 import type { OrderStatus } from '../../types'
@@ -58,7 +59,7 @@ export function LiveOrdersTable({
                 exit={{ opacity: 0 }}
                 className="border-t border-tf-line"
               >
-                <td className="py-3 font-mono text-xs text-tf-primary">{order.id}</td>
+                <td className="py-3 font-mono text-xs text-tf-primary"><Link to={`/orders/${order.id}`} className="hover:text-white hover:underline">{order.id}</Link></td>
                 <td className="py-3">
                   <div className="font-medium text-white">{order.customer}</div>
                   <div className="text-[11px] text-tf-muted">

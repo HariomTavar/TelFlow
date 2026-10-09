@@ -93,17 +93,17 @@ export function ActivationTrends() {
                   <stop offset="95%" stopColor="#f97316" stopOpacity={0} />
                 </linearGradient>
               </defs>
-              <CartesianGrid stroke="rgba(148,163,184,0.12)" vertical={false} />
-              <XAxis dataKey="month" tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
-              <YAxis tick={{ fill: '#94a3b8', fontSize: 11 }} axisLine={false} tickLine={false} />
+              <CartesianGrid stroke="#E7EBF2" vertical={false} />
+              <XAxis dataKey="month" tick={{ fill: '#64748B', fontSize: 11 }} axisLine={false} tickLine={false} />
+              <YAxis tick={{ fill: '#64748B', fontSize: 11 }} axisLine={false} tickLine={false} />
               <Tooltip
                 content={({ active, payload, label }) => {
                   if (!active || !payload?.length) return null
                   const row = payload[0].payload as (typeof seedTrends)[0]
                   const total = row.successful + row.failed + row.rollbacks
                   return (
-                    <div className="rounded-xl border border-slate-700 bg-[#0b1220] px-3 py-2.5 text-xs shadow-xl">
-                      <div className="mb-1 font-medium text-white">15 {label} 2026</div>
+                    <div className="rounded-xl border border-tf-line bg-white px-3 py-2.5 text-xs shadow-lg">
+                      <div className="mb-1 font-medium text-slate-900">15 {label} 2026</div>
                       <div className="text-lg font-semibold text-white">{formatNumber(total)}</div>
                       <div className="text-[11px] text-tf-muted">activations</div>
                       <div className="mt-2 space-y-1 text-[11px]">
