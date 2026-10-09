@@ -27,7 +27,7 @@ export function FailureInjectionPanel() {
         {services.map((svc) => (
           <div key={svc.key}>
             <div className="mb-2 text-xs font-medium text-slate-300">{svc.label}</div>
-            <div className="grid grid-cols-4 gap-1 rounded-xl bg-tf-bg p-1">
+            <div className="grid min-w-0 grid-cols-[repeat(4,minmax(0,1fr))] gap-1 overflow-hidden rounded-xl bg-tf-bg p-1">
               {modes.map((mode) => {
                 const active = failures[svc.key] === mode
                 return (
@@ -35,7 +35,7 @@ export function FailureInjectionPanel() {
                     key={mode}
                     type="button"
                     onClick={() => setFailure(svc.key, mode)}
-                    className="relative rounded-lg px-1 py-1.5 text-[10px] font-semibold tracking-wide"
+                    className="relative flex h-8 min-w-0 w-full items-center justify-center overflow-hidden rounded-lg px-0.5 text-center text-[10px] font-semibold leading-none tracking-wide whitespace-nowrap"
                   >
                     {active ? (
                       <motion.span
